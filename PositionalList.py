@@ -1,5 +1,5 @@
 import _DoublyLinkedBase
-class PositionalListADT(_DoublyLinkedBase):
+class PositionalList(_DoublyLinkedBase):
 	'''(my) Implementation of Positional List which inherits from _DoublyLinkedBase
 		using DoublyLinkedList and provides an abstraction 'position' to reach a node
 		(and find its element) directly without traversing from either end.
@@ -96,7 +96,7 @@ class PositionalListADT(_DoublyLinkedBase):
 		return answer
 
 if __name__ == '__main__':
-	raise Empty("""This is a Base class to support (my) implementation of Positional List ADT.\n
+	raise Empty("""This is a Base class to support (my) implementation of Positional List.
 	---------------------------------------------------------------------------
 	Author: 	Ritesh Shrivastav
 	email:  	ritesh.shrv@outlook.com
