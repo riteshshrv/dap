@@ -17,7 +17,7 @@ class ArrayStack:
         return len(self._data) == 0
 
     def top(self):
-        if sel.is_empty():
+        if self.is_empty():
             raise Empty("Stack is Empty")
         return self._data[-1]
 

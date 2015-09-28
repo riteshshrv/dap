@@ -54,7 +54,7 @@ class ArrayQueue():
         self._front = 0
 
 if __name__ == '__main__':
-    raise Empty("""This is a Base Class for implementing ArrayQueue.
+    print("""This is a Base Class for implementing ArrayQueue.
 	---------------------------------------------------------------------------
 	   Author: 	Ritesh Shrivastav
 	   email:  	ritesh.shrv@outlook.com
