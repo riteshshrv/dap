@@ -6,20 +6,21 @@ class HeapPriorityQueue(_PriorityQueueBase):
 
     '''Heap Implementation of Priority Queue.
     ---------------------------------------------------------------------------
-        Author: 	Ritesh Shrivastav
-        email:  	ritesh.shrv@outlook.com
-        @github: 	riteshshrv
+        Author:     Ritesh Shrivastav
+        email:      ritesh.shrv@outlook.com
+        @github:    riteshshrv
     ---------------------------------------------------------------------------'''
 
     #----------non-public behaviours------------------------------------
+
     def _parent(self, j):
-        return (j-1)//2
+        return (j - 1) // 2
 
     def _left(self, j):
-        return 2*j+1
+        return 2 * j + 1
 
     def _right(self, j):
-        return 2*j+2
+        return 2 * j + 2
 
     def _has_left(self, j):
         return self._left(j) < len(self._data)
@@ -55,8 +56,8 @@ class HeapPriorityQueue(_PriorityQueueBase):
                     self._heapify()
 
             def _heapify(self):
-                start = self._parent(len(self._data)-1)
-                for i in range(start, -1, -1):
+                start = self._parent(len(self._data) - 1)
+                for j in range(start, -1, -1):
                     self._downheap(j)
 
             def __len__(self):
@@ -65,7 +66,7 @@ class HeapPriorityQueue(_PriorityQueueBase):
             def add(self, k, v):
                 newest = self._item(k, v)
                 self._data.append(newest)
-                self._upheap(len(self._data)-1)
+                self._upheap(len(self._data) - 1)
 
             def min(self):
                 if self.is_empty(self):
@@ -76,15 +77,15 @@ class HeapPriorityQueue(_PriorityQueueBase):
             def remove_min(self):
                 if self.is_empty(self):
                     raise Empty("Priority Queue is Empty.")
-                self._swap(0, len(self._data)-1)
+                self._swap(0, len(self._data) - 1)
                 p = self._data.pop()
                 self._downheap(0)
                 return (p._key, p._value)
 
 if __name__ == '__main__':
     print("""This is a Base Class for implementing ArrayStack.
-	---------------------------------------------------------------------------
-	   Author: 	Ritesh Shrivastav
-	   email:  	ritesh.shrv@outlook.com
-	   @github: 	riteshshrv
-	---------------------------------------------------------------------------""")
+    ---------------------------------------------------------------------------
+       Author:  Ritesh Shrivastav
+       email:   ritesh.shrv@outlook.com
+       @github:     riteshshrv
+    ---------------------------------------------------------------------------""")

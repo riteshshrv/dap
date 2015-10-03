@@ -1,6 +1,14 @@
+from collections.abc import MutableMapping
+
+
 class MapBase(MutableMapping):
 
-    """My own Abstract Base Class that ubckydes a nonpublic _item class."""
+    """My own Abstract Base Class that includes a nonpublic _item class.
+    ---------------------------------------------------------------------------
+        Author:     Ritesh Shrivastav
+        email:      ritesh.shrv@outlook.com
+        @github:    riteshshrv
+    ---------------------------------------------------------------------------"""
 
     class _item:
 
