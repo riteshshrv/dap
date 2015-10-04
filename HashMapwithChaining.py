@@ -96,4 +96,5 @@ class ChainHashMap(HashMapBase):
                     yield key
 
 if __name__ == '__main__':
-    print("This is an Abstract Base Class for implementing Hash Map wiht Chaining.")
+    print("This is an Abstract Base Class for implementing Hash Map with Chaining.")
+    

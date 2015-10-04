@@ -49,7 +49,7 @@ class UnsortedTableMap(MapBase):
         """Assign value v to key k, overwriting existing value if present."""
         for item in self._table:
             if k == item._key:				# found a match
-                item._value = v 				# reassign value
+                item._value = v 			# reassign value
                 return 						# and quit
         # did not find any match for key
         self._table.append(self._item(k, v))
@@ -57,7 +57,7 @@ class UnsortedTableMap(MapBase):
     def __delitem__(self, k):
         """Remove an item associated with key k (raise KeyError if not found)."""
         for j in range(len(self._table)):
-            if k == self._table[j]._key:		# found a match
+            if k == self._table[j]._key:	# found a match
                 self._table.pop(j)			# remove item
                 return 						# and quit
         raise KeyError('Key Error: ', repr(k))
@@ -66,3 +66,7 @@ class UnsortedTableMap(MapBase):
         """Generate iteration of the maps's keys."""
         for item in self._table:
             yield item._key					# yield the key
+
+if __name__ == '__main__':
+    print("This is an Abstract Base Class which defines a Map.")
+    
