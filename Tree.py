@@ -33,7 +33,7 @@ class Tree:
         raise NotImplementedError('must be implemented by subclass')
 
     def num_children(self, p):
-        '''Return number of childre that Positon p has.'''
+        '''Return number of childrens that Positon p has.'''
         raise NotImplementedError('must be implemented by subclass')
 
     def children(self, p):
@@ -65,7 +65,7 @@ class Tree:
             return 1 + self.depth(self.parent(p))
 
     def _height(self, p):
-        '''Non-Publi method for _height of the subtree rooted at Positon p.'''
+        '''Non-Public method for height of the subtree rooted at Positon p.'''
         if self.is_leaf(p):
             return 0
         else:

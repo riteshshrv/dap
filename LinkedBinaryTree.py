@@ -49,13 +49,13 @@ class LinkedBinaryTree(BinaryTree):
         '''Return Position instance for given node (or None if no Node).'''
         return self.Position(self, node) if node is not None else None
 
-    #----------binary tree constructor----------------------------------------
+    # ----------binary tree constructor----------------------------------------
     def __init__(self):
         '''Create an initially empty binary tree.'''
         self._root = None
         self._size = 0
 
-    #-------------------public accessors--------------------------------------
+    # -------------------public accessors--------------------------------------
     def __len__(self):
         '''Return the total number of elements in the tree.'''
         return self._size
@@ -91,7 +91,7 @@ class LinkedBinaryTree(BinaryTree):
 
     def _add_root(self, e):
         '''Place element e at the root of an empty tree and return new Position.
-                Raise ValueError if tree nonempty.'''
+            Raise ValueError if tree nonempty.'''
 
         if self._root is not None:
             raise ValueError('Root Exists')
@@ -101,8 +101,8 @@ class LinkedBinaryTree(BinaryTree):
 
     def _add_left(self, p, e):
         '''Create a new left child for Position p, storing element e.
-                Return the Position of new node. Raise ValueError if Position 
-                p is invalid or p already has left child.'''
+            Return the Position of new node. Raise ValueError if Position 
+            p is invalid or p already has left child.'''
 
         node = self._validate(p)
         if node._left is not None:
@@ -113,8 +113,8 @@ class LinkedBinaryTree(BinaryTree):
 
     def _add_right(self, p, e):
         '''Create a new right child for Position p, storing element e.
-                Return the Position of new node. Raise ValueError if Position 
-                p is invalid or p already has right child.'''
+            Return the Position of new node. Raise ValueError if Position 
+            p is invalid or p already has right child.'''
 
         node = self._validate(p)
         if node.right is not None:
@@ -132,10 +132,10 @@ class LinkedBinaryTree(BinaryTree):
 
     def _delete(self, p):
         '''Delete the node at Position p, and replace it with its child,
-                if any. 	Return the element that had een stored at position p.
-                Raise ValueError if position p is invalid or p has two children.'''
+            if any. 	Return the element that had been stored at position p.
+            Raise ValueError if position p is invalid or p has two children.'''
 
-        node = self._validate(_p)
+        node = self._validate(p)
         if self.num_children(p) == 2:
             raise ValueError(p, "has two children")
         child = node._left if node._left else node._right 	# might be none
@@ -150,8 +150,7 @@ class LinkedBinaryTree(BinaryTree):
                 parent._left = child
             else:
                 parent._right = child
-        self._size -= 1
-        node._parent = node
+        self._size -= 1d
         node._parent = node 								# convention for deprecated node
         return node._element
 

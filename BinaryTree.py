@@ -10,7 +10,7 @@ class BinaryTree(Tree):
     	@github:    riteshshrv
 	---------------------------------------------------------------------------'''
 
-    #-------------additional abstract methods-------------------------------
+    # -------------additional abstract methods-------------------------------
 
     def left(self, p):
         '''Return a Position representing p's left child.
@@ -22,7 +22,7 @@ class BinaryTree(Tree):
                 Return None if p does not have a right child.'''
         raise NotImplemented("must be implemented by subclass")
 
-    #---------------concrete methods implemented in this class.---------------
+    # ---------------concrete methods implemented in this class.---------------
     def sibling(self, p):
         '''Return a Position representing p's sibling (or None if no sibling).'''
         parent = self.parent(p)
