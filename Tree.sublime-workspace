@@ -1,0 +1,379 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"check",
+				"checkstyle-algs4"
+			],
+			[
+				"Binary",
+				"BinarySearchTree	class"
+			],
+			[
+				"is",
+				"is_empty"
+			],
+			[
+				"num",
+				"num_children"
+			],
+			[
+				"ele",
+				"_element"
+			],
+			[
+				"val",
+				"_validate"
+			],
+			[
+				"si",
+				"_size"
+			],
+			[
+				"ri",
+				"_right"
+			],
+			[
+				"le",
+				"_left"
+			],
+			[
+				"s",
+				"self"
+			],
+			[
+				"pa",
+				"_parent"
+			],
+			[
+				"va",
+				"_validate"
+			],
+			[
+				"roo",
+				"_root"
+			],
+			[
+				"par",
+				"_parent"
+			],
+			[
+				"no",
+				"_node"
+			],
+			[
+				"r",
+				"_right"
+			],
+			[
+				"l",
+				"left"
+			],
+			[
+				"el",
+				"_element"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"repr",
+				"representing"
+			],
+			[
+				"if",
+				"ifmain	if __name__ == '__main__'"
+			],
+			[
+				"ta",
+				"_table"
+			],
+			[
+				"has",
+				"_hash_function"
+			],
+			[
+				"shi",
+				"_shift"
+			],
+			[
+				"k",
+				"k"
+			],
+			[
+				"v",
+				"v"
+			],
+			[
+				"ke",
+				"_key"
+			],
+			[
+				"ite",
+				"item"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"packages",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/ritesh/Desktop/code_workspace/dap/(my)BinarySearchTree.py",
+		"/home/ritesh/Desktop/code_workspace/dap/LinkedBinaryTree.py",
+		"/home/ritesh/Desktop/code_workspace/dap/BinaryTree.py",
+		"/home/ritesh/Desktop/code_workspace/dap/Tree.py",
+		"/media/ritesh/dRitesh/code_workspace/oj/tc/FormatAmt.py",
+		"/media/ritesh/dRitesh/Errata.txt",
+		"/home/ritesh/Downloads/geeksforgeeks-pdf-master/geeksforgeeks-pdf.py",
+		"/home/ritesh/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/media/ritesh/dRitesh/code_workspace/shell_scripts/algs4_java.sh",
+		"/media/ritesh/dRitesh/code_workspace/shell_scripts/hello.sh",
+		"/home/ritesh/Desktop/code_workspace/dap/HeapPriorityQueue.py",
+		"/home/ritesh/Desktop/code_workspace/dap/my_bst.py",
+		"/home/ritesh/Desktop/code_workspace/oj/ib_sqrt.py",
+		"/home/ritesh/.bashrc",
+		"/home/ritesh/Desktop/code_workspace/dap/HashMapwithChaining.py",
+		"/home/ritesh/Desktop/code_workspace/dap/UnsortedTableMap.py",
+		"/home/ritesh/Desktop/code_workspace/send_mail_fb.py",
+		"/home/ritesh/Desktop/code_workspace/fp_script.py",
+		"/home/ritesh/Desktop/code_workspace/am_script.py",
+		"/home/ritesh/Downloads/Copy of RVB2.BAS",
+		"/home/ritesh/Desktop/code_workspace/dap/_PriorityQueueBase.py",
+		"/home/ritesh/Desktop/Link to code_workspace/oj/spoj_onp.py",
+		"/home/ritesh/Desktop/Link to code_workspace/oj/ib_evalRPN.py",
+		"/home/ritesh/etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla",
+		"/home/ritesh/Desktop/Link to code_workspace/oj/ib_subtract.py",
+		"/home/ritesh/Desktop/Link to code_workspace/o/ib_subtract.py",
+		"/home/ritesh/Desktop/Link to code_workspace/oj/he_prom.py",
+		"/media/ritesh/dRitesh/code_workspace/oj/.git/MERGE_MSG",
+		"/home/ritesh/.config/sublime-text-3/Packages/User/Python.sublime-settings"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"font",
+			"_left",
+			"left",
+			"height",
+			"hash"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 130.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Tree.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Desktop/code_workspace/dap/Tree.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
