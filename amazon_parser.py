@@ -26,7 +26,10 @@ def crawler():
 
 def find_product_info(url=None):
     '''Function to find product information viz. name, price, description, image_path.
-            Functi'''
+        
+        Function takes an input url and dumps info of only the product available 
+        in that page. If 'url' is None than function starts generating data from 
+        crawler.'''
     
     if url is None:
         mi_url = 'http://www.amazon.in/gp/product/B00VEB0F22?redirect=true&ref_=s9_acss_bw_sc_MiStore_ah_s1'
@@ -35,4 +38,25 @@ def find_product_info(url=None):
     name = soup.find(id="productTtile").contents
     price = soup.find(id="priceblock_ourprice").get_text()
     description = soup.find(id="feature-bullets")
+    category=soup.find('span',{"class":"a-list-item"}).a.contents
     img_path = soup.find(id="landingImage")
+
+    data=[]
+    data.append({
+    	"name": name,
+    	"price": price,
+    	"description": description,
+    	"img": image_path,
+    	"category": category
+    	})
+    with open("my_output.json","w") as outf:
+    	json.dumps(data,outf)
+
+if __name__ == '__main__':
+	print("Work in progress")
+	try:
+		find_product_info()
+		print("please check 'my_output.json' file in current path for output data.")
+	except:
+		print("something wrong happened.")
+		raise NotImplementedError
