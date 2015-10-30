@@ -25,6 +25,7 @@ def crawler():
 
 
 def find_product_info(url=None):
+	# This Function currently only works for one url
     '''Function to find product information viz. name, price, description, image_path.
         
         Function takes an input url and dumps info of only the product available 
@@ -37,7 +38,12 @@ def find_product_info(url=None):
 
     name = soup.find(id="productTtile").contents
     price = soup.find(id="priceblock_ourprice").get_text()
-    description = soup.find(id="feature-bullets")
+
+    description_markup = soup.find(id="feature-bullets")
+    description=[]
+    for i in description_markup.ul.find_all('span'):
+    	description.append(''.join(i.contents))
+
     category=soup.find('span',{"class":"a-list-item"}).a.contents
     img_path = soup.find(id="landingImage")
 
