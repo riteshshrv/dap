@@ -33,10 +33,10 @@ def find_product_info(url=None):
         crawler.'''
     
     if url is None:
-        mi_url = 'http://www.amazon.in/gp/product/B00VEB0F22?redirect=true&ref_=s9_acss_bw_sc_MiStore_ah_s1'
+        url = 'http://www.amazon.in/gp/product/B00VEB0F22?redirect=true&ref_=s9_acss_bw_sc_MiStore_ah_s1'
     soup = BeautifulSoup(urllib.request.urlopen(url))
 
-    name = soup.find(id="productTtile").contents
+    name = soup.find(id="productTitle").contents
     price = soup.find(id="priceblock_ourprice").get_text()
 
     description_markup = soup.find(id="feature-bullets")
@@ -52,7 +52,7 @@ def find_product_info(url=None):
     	"name": name,
     	"price": price,
     	"description": description,
-    	"img": image_path,
+    	"img": img_path,
     	"category": category
     	})
     with open("my_output.json","w") as outf:
