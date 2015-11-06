@@ -37,7 +37,7 @@ def find_product_info(url=None):
     soup = BeautifulSoup(urllib.request.urlopen(url))
 
     name = soup.find(id="productTitle").contents
-    price = soup.find(id="priceblock_ourprice").get_text()
+    price = soup.find(id="priceblock_ourprice").get_text().split()[-1]
 
     description_markup = soup.find(id="feature-bullets")
     description=[]

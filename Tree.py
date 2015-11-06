@@ -10,7 +10,7 @@ class Tree:
     #----------nested Position class------------------------------------------
     class Position:
 
-        ''''An abstaction representing the location of a single element.'''
+        '''An abstaction representing the location of a single element.'''
 
         def element(self):
             '''Return the element stored at this Position.'''
