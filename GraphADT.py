@@ -1,72 +1,135 @@
-'''Base class representing a Graph Data Structure.
+'''Abstract base class for representing a binary tree structure.
     ---------------------------------------------------------------------------
     	Author:     Ritesh Shrivastav
     	email:      ritesh.shrv@outlook.com
     	@github:    riteshshrv
 	---------------------------------------------------------------------------'''
 
+# -------------------------nested Vertex class-------------------------------
+
 
 class Vertex:
 
-    '''Base Class for implementing Vertex objects in a Graph.'''
+    '''Lightweight vertex structure for graph.'''
 
-    def __init__(self, key):
-        self.id = key
-        self.connectedTo = {}
+    __slots__ = '_element'
 
-    def addNeighbour(self, nbr, weight=0):
-        self.connectedTo[nbr] = weight
+    def __init__(self, x):
+        '''Constructor to be used by Graph's insert_vertex(x) method.'''
+        self._element = x
 
-    def __str__(self):
-        return str(self.id) + ' connectedTo: ' + str([x.id for x in self.connectedTo])
+    def element(self):
+        '''Return element associated with this vertex.'''
+        return self._element
 
-    def getConnections(self):
-        return self.connectedTo.keys()
+    def __hash__(self):			# will allow vertex to be a map/set key
+        return hash(id(self))
 
-    def getId(self):
-        return self.id
 
-    def getWeight(self, nbr):
-        return self.connectedTo[nbr]
+# -----------------------nested Edge class-------------------------------------
+class Edge:
+
+    '''Lightweight edge structure for a graph.'''
+
+    __slots__ = '_origin', '_destination', '_element'
+
+    def __init__(self, u, v, x):
+        self._origin = u
+        self._destination = v
+        self._element = x
+
+    def endpoints(self):
+        '''Return (u,v) tuple for vertices u and v.'''
+        return (self._origin, self._destination)
+
+    def opposite(self, v):
+        '''Return the vertex that is opposite v on this edge.'''
+        return self._destination if v is self._origin else self._origin
+
+    def element(self):
+        '''Return the element associated with this edge.'''
+        return self._element
+
+    def __hash__(self): 		# will allow edge to be a map/set key
+        return hash((self._origin, self._destination))
 
 
 class Graph:
 
-    '''Base Class for implementing Graph.'''
+    '''Representation of a simple Graph using an adjacency map.'''
 
-    def __init__(self):
-        self.vertList = {}
-        self.numVertices = 0
+    def __init__(self, directed=False):
+        '''Create an empty graph (undirected by default).
+           Graph is directed if optional parameter is set to True.'''
 
-    def addVertex(self, key):
-        self.numVertices = self.numVertices + 1
-        newVertex = Vertex(key)
-        self.vertList[key] = newVertex
-        return newVertex
+        self._outgoing = {}
+        # only create second map for directed graph; use alias for undirected
+        self._incoming = {} if directed else self._outgoing
 
-    def getVertex(self, n):
-        if n in self.vetList:
-            return self.vertList[n]
-        else:
-            return None
+    def is_directed(self):
+        '''Return True if this is a directed graph False if undirected.
+	        Property is based on the original declaration of the graph,
+	        not its contents.'''
 
-    def __contains__(self, n):
-        return n in self.vertList
+        # directed if maps are distinct
+        return self._incoming is not self._outgoing
 
-    def addEdge(self, f, t, cost=0):
-        if f not in self.vertList:
-            nv = self.addVertex(f)
-        if t not in self.vertList:
-            nv = self.addVertex(t)
-        self.vertList[f].addNeighbour(self.vertList[t], cost)
+    def vertex_count(self):
+        '''Return the number of vertices in the graph.'''
+        return len(self._outgoing)
 
-    def getVertices(self):
-        return self.vertList.keys()
+    def vertices(self):
+        '''Return an iteration of all vertices in the graph.'''
+        return self._outgoing.keys()
 
-    def __iter__(self):
-        return iter(self.vertList.values())
+    def edge_count(self):
+        '''Return number of edges in the graph.'''
+
+        total = sum(len(self._outgoing[v]) for v in self._outgoing)
+        # for undirected graphs, make sure not to double-count edges
+        return total if self.is_directed else total // 2
+
+    def edges(self):
+        '''Return a set of all edges of the graph.'''
+
+        result = set()		# avoid double-reporting edges of undirected graph
+        for secondary_map in self._outgoing.values():
+            result.update(secondary_map.values())  # add edges to resulting set
+            return result
+
+    def get_edge(self, u, v):
+        '''Return the edge from u to v, or None if not adjacent.'''
+        return self._outgoing[u].get(v)		# returns None if v not adjacent
+
+    def degree(self, v, outgoing=True):
+        '''Return number of (outgoing) edges incident to vertex v in the graph.
+	        If graph is directed, optional parameter used to count incoming edges.'''
+
+        adj = self.outgoing if outgoing else self._incoming
+        return len(adj[v])
+
+    def incident_edges(self, v, outgoing=True):
+        '''Return all (outgoing) edges incident to vertex v in the graph.
+	        If graph is directed, optional parameter used to used to 
+	        request incoming edges.'''
+
+        adj = self._outgoing if outgoing else self._incoming
+
+    def insert_vertex(self, x=None):
+        '''Insert and return a new Vertex with element x.'''
+        v = self.Vertex(x)
+        self._outgoing[v] = {}
+        if self.is_directed():
+            self._incoming[v] = {}		# need distinct map for incoming edges
+        return v
+
+    def insert_edge(self, u, v, x=None):
+        '''Insert and return a new Edge from u to v iwith auxiliary element x.'''
+
+        e = self.Edge(u, v, x)
+        self._outgoing[u][v] = e
+        self._incoming[v][u] = e
 
 
 if __name__ == '__main__':
-    print(
-        "This is an Abstract Base Class for a implementing a Graph Data Structure.")
+    print("This is an Abstract Data Class for implementing Graph.")
