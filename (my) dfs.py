@@ -7,10 +7,10 @@ def dfs(graph,v):
 	for s in v:
 		if s not in parent:
 			parent[s]=None
-			dfs-visit(graph,v)
+			dfs_visit(graph,v)
 			
-def dfs-visit(adj,s):
+def dfs_visit(adj,s):
 	for v in adj[s]:
 		if v not in parent:
 			parent[v]=s
-			dfs-visit(adj,v)
+			dfs_visit(adj,v)
